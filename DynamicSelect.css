@@ -1,0 +1,121 @@
+.dynamic-select {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    user-select: none;
+    position: absolute;
+    bottom: 0;
+    left: 2.2rem;
+  }
+  .dynamic-select .dynamic-select-header {
+    border: none; 
+    background-color: transparent !important;
+  }
+  .dynamic-select .dynamic-select-header::after {
+
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* Ausklapp Pfeil: */
+    opacity: 0.6;
+    visibility: hidden;
+    background-image: url(IconPfeil.png);
+    background-size: contain;
+    height: 24px;
+    width: 24px;
+  }
+
+  .dynamic-select:hover .dynamic-select-header::after {
+    opacity: 1;
+  }
+
+  .canvas_container:hover .dynamic-select-header::after {
+    visibility: visible;
+  }
+
+
+
+
+
+  .dynamic-select .dynamic-select-header.dynamic-select-header-active::after {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  .dynamic-select .dynamic-select-header.dynamic-select-header-active + .dynamic-select-options {
+    display: flex;
+  }
+  .dynamic-select .dynamic-select-header {
+    color: #65727e;
+  }
+  .dynamic-select .dynamic-select-options {
+    /* Das Droppdown ---> */
+    display: none;
+    box-sizing: border-box;
+    flex-flow: wrap;
+    position: absolute;
+    top: 100%;
+    /* Dieser wert muss manchmal variiert werden !!! */ 
+    left: 0;
+    right: 0;
+    z-index: 999;
+    margin-top: 5px;
+    padding: 5px;
+    background-color: var(--background-color);
+    border: var(--stroke-with) solid var(--border-color);
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .dynamic-select .dynamic-select-options::-webkit-scrollbar {
+    width: 5px;
+  }
+  .dynamic-select .dynamic-select-options::-webkit-scrollbar-track {
+    background: #f0f1f3;
+  }
+  .dynamic-select .dynamic-select-options::-webkit-scrollbar-thumb {
+    background: #cdcfd1;
+  }
+  .dynamic-select .dynamic-select-options::-webkit-scrollbar-thumb:hover {
+    background: #b2b6b9;
+  }
+  .dynamic-select .dynamic-select-options .dynamic-select-option {
+    padding: 7px 12px;
+  }
+  .dynamic-select .dynamic-select-options .dynamic-select-option:hover, .dynamic-select .dynamic-select-options .dynamic-select-option:active {
+    background-color: var(--color-two);
+  }
+  .dynamic-select .dynamic-select-header, .dynamic-select .dynamic-select-option {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    border-radius: 0px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    font-size: 16px;
+    color: #212529;
+  }
+  .dynamic-select .dynamic-select-header img, .dynamic-select .dynamic-select-header svg, .dynamic-select .dynamic-select-header i, .dynamic-select .dynamic-select-header span, .dynamic-select .dynamic-select-option img, .dynamic-select .dynamic-select-option svg, .dynamic-select .dynamic-select-option i, .dynamic-select .dynamic-select-option span {
+    box-sizing: border-box;
+    margin-right: 10px;
+    border: var(--stroke-with) solid var(--border-color);
+  }
+  .dynamic-select .dynamic-select-header.dynamic-select-no-text, .dynamic-select .dynamic-select-option.dynamic-select-no-text {
+    justify-content: center;
+  }
+  .dynamic-select .dynamic-select-header.dynamic-select-no-text img, .dynamic-select .dynamic-select-header.dynamic-select-no-text svg, .dynamic-select .dynamic-select-header.dynamic-select-no-text i, .dynamic-select .dynamic-select-header.dynamic-select-no-text span, .dynamic-select .dynamic-select-option.dynamic-select-no-text img, .dynamic-select .dynamic-select-option.dynamic-select-no-text svg, .dynamic-select .dynamic-select-option.dynamic-select-no-text i, .dynamic-select .dynamic-select-option.dynamic-select-no-text span {
+    margin-right: 0;
+  }
+  .dynamic-select .dynamic-select-header .dynamic-select-option-text, .dynamic-select .dynamic-select-option .dynamic-select-option-text {
+    box-sizing: border-box;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: inherit;
+    font-size: inherit;
+  }

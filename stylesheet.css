@@ -1,0 +1,345 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+     --background-color: #151515;
+     --text-color: #ccc;
+     --border-color: #999;
+     --light-gray: rgba(185, 185, 185, 0.4);
+     --drop-shadow: black;
+    --color-one: rgb(240, 154, 120);
+     --color-two: rgb(102, 68, 116);
+     --icon-color: #eee;
+    }
+}
+@media (prefers-color-scheme: light) {
+    :root {
+     --background-color: #fefefe;
+     --text-color: #222;
+     --border-color: #222;
+     --light-gray: rgba(185, 185, 185, 0.4);
+     --drop-shadow: rgb(225, 225, 225);
+     --color-one: rgb(240, 154, 120);
+     --color-two: rgb(200, 166, 212);
+     --icon-color: #333;
+    }
+}
+:root {
+    --stroke-with: 2px
+}
+
+::-moz-selection { background: var(--color-two); }
+::selection { background: var(--color-two); }
+
+@media (max-width: 575.98px) {
+    .add-neben{ display: none;}
+    .eq-neben{ display: none;}
+    .add-verti{ display: block;}
+    .eq-verti{ display: block;}
+} 
+@media (min-width: 576px) {
+    .add-verti{ display: none;}
+    .eq-neben{ display: none;}
+    .add-neben{ display: block;}
+    .eq-verti{ display: block;}
+}
+@media (min-width: 992px) {
+    .add-verti{ display: none;}
+    .eq-verti{ display: none;}
+    .add-neben{ display: block;}
+    .eq-neben{ display: block;}
+}
+
+h1, #title-svg {
+    font-size: 5.5rem; /* Standardgröße der Überschrift */
+}
+@media (max-width: 700px) {
+    h1, #title-svg {
+        font-size: 3.6rem; /* Kleinere Schriftgröße für schmalere Bildschirme */
+    }
+}
+@media (max-width: 374px) {
+    h1, #title-svg {
+        font-size: 2rem; /* Noch kleinere Schriftgröße für sehr schmale Bildschirme */
+    }
+}
+
+@font-face {
+    font-family: 'Sabofilled';
+    src: url('fonts/Sabo_Filled_400.otf');
+}
+
+@font-face {
+    font-family: 'Pixel5';
+    src: url('fonts/Tiny5-Regular.ttf');
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+    font-size: 20pt;
+    text-align: center;
+}
+
+
+/*Titel*/
+#title-mask, h1{ fill: var(--background-color); }
+h1, #title-svg {
+    font-family: Sabofilled;
+    margin: 0; /* damit beim Seiteladen die Schrift nicht erst kurz weiter unten geladen wird */
+    color: transparent; /* hilft auch beim Seiteladen */ 
+}
+#title-svg {
+    position: absolute; /* hilft auch nur beim Seiteladen */
+    top: 0; /* hilft auch nur beim Seiteladen */ 
+}
+#title-container {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+
+.cls-1 {
+    fill: none;
+    stroke: var(--border-color);
+    stroke-miterlimit: 10;
+    stroke-width: var(--stroke-with);
+}
+
+.container-fluid {
+    max-width: 2200px;
+}
+
+.canvas_container{
+    overflow: visible; 
+    display: inherit; 
+    align-items: last baseline;
+    position: relative;
+    /* justify-content: center; */
+    border: var(--stroke-with) solid var(--border-color);
+}
+.canvas_klein_container{
+    overflow: hidden; 
+    display: inherit; 
+    align-items: last baseline;
+    position: relative;
+    /* justify-content: center; */
+    width: 42%;
+    border: var(--stroke-with) solid var(--border-color);
+}  
+.canvas-standart{
+    height: 100%;
+    width: 100%;
+}
+
+.canvas-lable{
+    position: absolute;
+    /* font-family: Pixel5; */
+    font-family: Arial;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* margin: 2px; */
+    line-height: 1em;
+    visibility: hidden;
+    left: 50%;
+    top: 5px;
+    transform: translate(-50%, 0);
+}
+.fullscreen-button {
+    background-image: url("IconFullscreen.png"); 
+    background-size: contain;
+
+    position: absolute;
+    bottom: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    line-height: 1rem;
+    opacity: 0.6;
+    visibility: hidden; /* Standardmäßig unsichtbar */
+    /* mix-blend-mode: exclusion; */
+    height: 2rem;
+    width: 2rem;
+
+    stroke: #222; 
+    stroke-miterlimit: 65;
+    stroke-width: 65px;
+}
+.fullscreen-button:hover {
+    opacity: 1;
+}
+
+.canvas_container:hover .fullscreen-button {
+    visibility: visible; /* Sichtbar, wenn die Maus über dem canvas_container ist */
+}
+.canvas_klein_container:hover .fullscreen-button {
+    visibility: visible; /* Sichtbar, wenn die Maus über dem canvas_container ist */
+}
+
+
+
+.zwei_canvas{
+    position: relative;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.klammer_canvas{
+    position: relative;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.multi-20-abst-lr{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.add-neben {
+    position: absolute;
+    margin-left: -1.75rem; 
+}
+.eq-neben {
+    position: absolute;
+    margin-left: 0.75rem;
+    left: 100%;
+}
+.add-verti, .eq-verti{
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.svg-box {
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+
+#Einstellungsleiste{
+    width: min(calc(100% - 12mm - 2*var(--stroke-with)), 1000px);
+    padding-left: 10mm;
+    padding-right: 10mm;
+    border: var(--stroke-with) solid var(--border-color);
+    filter: drop-shadow(0 0 0.1cm var(--drop-shadow));
+    text-align: left;
+}
+
+input[type="range"] {
+    cursor: pointer; /* ?? */
+    filter: drop-shadow(0 0 0.1cm var(--drop-shadow));
+    margin-right: 0.5rem;
+}
+input[type="range"]:focus {
+    outline: none;
+    background-color: var(--color-two);
+    border: var(--stroke-with) solid var(--color-two);
+}
+.input-knob-with-lable {
+    font-size: 25px;
+    display: flex;
+}
+.value {
+    line-height: 70%;
+    font-size: 20px;
+}
+#Farbvorschau {
+    width: 24px;
+    height: 36px;
+    background-color: hsl(0, 100%, 50%);
+    margin-left: 0.5rem;
+    border: none;
+    margin: none;
+}
+#color_picker{
+    visibility: hidden;
+    width: 100%;
+}
+
+.btn {
+    border-radius: 0px !important; 
+    font-size: 10pt;
+    color: var(--text-color);
+    border-width: var(--stroke-with);
+    font-family: Arial;
+    letter-spacing: 0.2px;
+    font-size: 10pt;
+}
+.btn:hover {
+    background-color: var(--color-two) !important;
+    color: var(--text-color) !important;
+}
+
+.lable {
+    font-family: Sabofilled;
+    font-size: 25px;
+    color: var(--color-one) !important;
+}
+
+/* .basic-dropdown{
+    color: #777;
+    background-color: var(--background-color);
+    border: var(--stroke-with) solid #777;
+    border-radius: 0;
+} */
+.basic-dropdown {
+    appearance: none; /* Entfernt das native Styling */
+    -webkit-appearance: none; /* Für Safari */
+    -moz-appearance: none; /* Für Firefox */
+    
+    color: #777;
+    background-color: var(--background-color);
+    border: var(--stroke-with) solid #777;
+    border-radius: 0;
+    padding: 0%;
+    height: 24px;
+    line-height: 12px;
+    font-size: 12px; /* Sicherstellen, dass es überall lesbar ist */
+    padding-left: 5px;
+    padding-right: 22px;
+
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="none" d="M0 0h24v24H0z"/%3E%3Cpath fill="%23777" d="M12 16l-4-4h8z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 0px center;
+    background-size: 24px; /* Größe des Pfeils */
+    
+    cursor: pointer; /* Einheitliches Verhalten */
+}
+/* Optional: Pfeil-Icon für Safari & andere Browser */
+.basic-dropdown::-ms-expand {
+    display: none; /* Entfernt Standard-Pfeil in IE */
+}
+.basic-dropdown::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+}
+.basic-checkbox{
+    outline: var(--stroke-with) solid #777;
+    outline-offset: -2px;
+    border-radius: 0;
+    accent-color: #777;
+    cursor: pointer;
+}
+.basic-checkbox:hover{
+    filter: none !important;
+}
+
+
+.knob-container{
+    width: 25%;
+    min-width: max-content;
+}
+
+
+
+

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> SebRoh.de | Keytechnik </title>
+
+        <link rel="icon" href="img/cl.png">
+
+        <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css" media="all">
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="checkbox_switch.css">
+        <link rel="stylesheet" href="DynamicSelect.css">
+
+    </head> 
+    <body>
+        <!-- Titel/ Überschrift -->
+        <div id="title-container"> 
+            <h1 id="no-vis-title"> KEYTECHNIK </h1>
+            <svg id="title-svg">
+                <mask id="mask" x="0" y="0" height="100%" width="100%">
+                    <rect x="0" y="0" height="100%" width="100%" fill="white" />
+                    <text x="50%" y="59%" dominant-baseline="middle" text-anchor="middle" fill="black"> KEYTECHNIK </text>
+                </mask>
+                <rect id="title-mask" x="0" y="0" height="100%" width="100%" mask="url(#mask)" />
+            </svg> 
+        </div>
+        <!-- <p style="text-align: center; margin-top: 0%; z-index: 100;"> von Sebastian Rohde </p> --> 
+        
+        
+
+
+
+        <!-- Gleichungs-Darstellung -->
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-sm-center"> 
+                <!-- none: <576px| sm: ≥768px | lg: ≥992px -->
+
+                <!-- Reihe 1 -->
+                <div class="col">
+
+                    <div class="zwei_canvas">
+
+                        <div class="canvas_container">
+                            <canvas class="canvas-standart" id="FILL_canvas">  &lt;canvas&gt; element is not supportet </canvas>
+                            <button class="fullscreen-button" onclick="fullscreen(`FILL_canvas`)" width="2rem" height="2rem">
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"> 
+                                   <path d="M110-110v-252h118v134h134v118H110Zm489 0v-118h133v-134h118v252H599ZM110-599v-251h252v118H228v133H110Zm622 0v-133H599v-118h251v251H732Z"/>
+                                </svg>  -->
+                            </button>
+                            <select id="bildCanvas1" name="bildauswahl_fuer_FILL"></select>
+                            <p class="canvas-lable"> FILL </p>
+                        </div>
+
+                        <p class="multi-20-abst-lr" id="multi1"> &#10799; </p> <!-- ⨯ -->
+
+                        <div class="canvas_container" id="KEY_canvas_container">
+                            <canvas class="canvas-standart" id="KEY_canvas"> &lt;canvas&gt; element is not supportet </canvas>
+                            <button class="fullscreen-button" onclick="fullscreen(`KEY_canvas`)" id="KEY_canvas_button"> 
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white">
+                                    <path d="M110-110v-252h118v134h134v118H110Zm489 0v-118h133v-134h118v252H599ZM110-599v-251h252v118H228v133H110Zm622 0v-133H599v-118h251v251H732Z"/>
+                                 </svg>  -->
+                            </button>
+                            <p class="canvas-lable"> KEY </p>
+                        </div>
+
+                    </div>
+                    
+                    <div class="klammer_canvas">
+                        <!-- Klammer -->
+                        <div class="svg-box" id="klammer1"> 
+                            <?xml version="1.0" encoding="UTF-8"?>
+                            <svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 342.16 56.69">
+                                <line class="cls-1" x1="171.08" y1="56.69" x2="171.08" y2="28.35"/>
+                                <polyline class="cls-1" points="341.16 0 341.16 28.35 1 28.35 1 0"/>
+                            </svg>
+                        </div> 
+                        
+                    </div>
+                    
+                    <div style="display: flex; justify-content: center;">
+                        <div class="canvas_klein_container" id="FILL_x_KEY_canvas_container">
+                            <canvas class="canvas-standart" id="FILL_x_KEY_canvas"></canvas>
+                            <button class="fullscreen-button" onclick="fullscreen(`FILL_x_KEY_canvas`)" id="FILL_x_KEY_canvas_button"> 
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white">
+                                    <path d="M110-110v-252h118v134h134v118H110Zm489 0v-118h133v-134h118v252H599ZM110-599v-251h252v118H228v133H110Zm622 0v-133H599v-118h251v251H732Z"/>
+                                 </svg>  -->
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reihe 2 -->
+                <div class="col"> 
+
+                    <p class="add-verti"> + </p>
+
+                    <div class="zwei_canvas">
+                        <p class="add-neben"> + </p>
+                        
+                        <div class="canvas_container">
+                            <canvas class="canvas-standart" id="BG_canvas"> &lt;canvas&gt; element is not supportet  </canvas>
+                            <button class="fullscreen-button" onclick="fullscreen(`BG_canvas`)">  
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white">
+                                    <path d="M110-110v-252h118v134h134v118H110Zm489 0v-118h133v-134h118v252H599ZM110-599v-251h252v118H228v133H110Zm622 0v-133H599v-118h251v251H732Z"/>
+                                </svg>  -->
+                            </button>
+                            <select id="bildCanvas2" name="bildauswahl_fuer_BG"></select>
+                            <p class="canvas-lable"> BG </p>
+                        </div>
+                        
+                        <p class="multi-20-abst-lr"> &#10799; </p> <!-- ⨯ -->
+                        
+                        <div class="canvas_container">
+                            <canvas class="canvas-standart" id="invKEY_canvas"> &lt;canvas&gt; element is not supportet  </canvas>
+                            <button class="fullscreen-button" onclick="fullscreen(`invKEY_canvas`)"> 
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white">
+                                    <path d="M110-110v-252h118v134h134v118H110Zm489 0v-118h133v-134h118v252H599ZM110-599v-251h252v118H228v133H110Zm622 0v-133H599v-118h251v251H732Z"/>
+                                </svg>  -->
+                            </button>
+                            <p class="canvas-lable"> 1-KEY </p>
+                        </div>
+
+                        <p class="eq-neben"> = </p>
+                    </div>
+
+                    <div class="klammer_canvas">
+                        <!-- Klammer -->
+                        <div class="svg-box"> 
+                            <?xml version="1.0" encoding="UTF-8"?>
+                                <svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 342.16 56.69">
+                                <line class="cls-1" x1="171.08" y1="56.69" x2="171.08" y2="28.35"/>
+                                <polyline class="cls-1" points="341.16 0 341.16 28.35 1 28.35 1 0"/>
+                            </svg>
+                        </div> 
+                    </div>
+                    
+                    <div style="display: flex; justify-content: center;">
+                        <div class="canvas_klein_container">
+                            <canvas class="canvas-standart" id="BG_x_invKEY_canvas"></canvas>
+                            <button class="fullscreen-button" onclick="fullscreen(`BG_x_invKEY_canvas`)"> 
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white">
+                                    <path d="M110-110v-252h118v134h134v118H110Zm489 0v-118h133v-134h118v252H599ZM110-599v-251h252v118H228v133H110Zm622 0v-133H599v-118h251v251H732Z"/>
+                                </svg> -->
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reihe 3 -->
+                <div class="col">
+                    <div class="eq-verti"> = </div>
+
+                    <div class="zwei_canvas">
+                        <div class="canvas_container">
+                            <canvas class="canvas-standart" id="RESULT_canvas"> &lt;canvas&gt; element is not supportet  </canvas>
+                            <button class="fullscreen-button" onclick="fullscreen(`RESULT_canvas`)"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white">
+                                    <path d="M110-110v-252h118v134h134v118H110Zm489 0v-118h133v-134h118v252H599ZM110-599v-251h252v118H228v133H110Zm622 0v-133H599v-118h251v251H732Z"/>
+                                </svg>
+                            </button>
+                            <p class="canvas-lable"> OUTPUT </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+
+
+
+
+
+
+        <div style="width: 100%; display: flex; justify-content: center; margin-top: 12mm; margin-bottom: 12mm;">
+        <div id="Einstellungsleiste">
+            <div style="display: flex; width: 100%; justify-content: space-between; flex-wrap: wrap; margin-top: 6mm; margin-bottom: 6mm;">
+            
+                <div style="width: 50%; min-width: max-content;">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <div class="lable">Key Type &nbsp; </div>
+    
+                        <input type="radio" class="btn-check" name="Key-Auswahl" id="Luminanz" autocomplete="off" checked value="luma">
+                        <label class="btn me-2" for="Luminanz">Luminanz</label>
+                
+                        <input type="radio" class="btn-check" name="Key-Auswahl" id="Chroma" autocomplete="off" value="chroma">
+                        <label class="btn me-2" for="Chroma">Chroma</label>
+                    </div>
+                </div>
+
+                <div style="width: 50%; min-width: max-content;">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <div class="lable">Source &nbsp; </div>
+      
+                        <input type="radio" class="btn-check" name="Source-Auswahl" id="Self" value="self" autocomplete="off" checked>
+                        <label class="btn me-2" for="Self">Self</label>
+                    
+                        <input type="radio" class="btn-check" name="Source-Auswahl" id="Split" value="split" autocomplete="off">
+                        <label class="btn me-2" for="Split">Split</label>
+                    
+                        <input type="radio" class="btn-check" name="Source-Auswahl" id="Autoselect" value="auto" autocomplete="off">
+                        <label class="btn me-2" for="Autoselect">Auto select</label>
+                    </div>
+                </div>
+            </div>
+        
+             
+            <div style="display: flex; width: 100%; justify-content: space-between; flex-wrap: wrap; margin-top: 6mm; margin-bottom: 6mm;">
+
+                <div class="knob-container">
+                    <div class="input-knob-with-lable">
+                        <input type="range" class="input-knob" id="gain" min="-100" max="100" step="0.5" value="0"
+                        data-bgcolor="#444" data-fgcolor="#DDD"  data-diameter="36" data-reset="0"/>
+                        <div>
+                            <div class="lable">Gain </div>
+                            <div class="value" id="gain-value"> 0.0 <!-- Standart --> </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="knob-container">
+                    <div class="input-knob-with-lable">
+                        <input type="range" class="input-knob" id="clip" min="0" max="100" step="0.5" value="50"
+                        data-bgcolor="#444" data-fgcolor="#DDD"  data-diameter="36" data-reset="50" />
+                        <div>
+                            <div class="lable">Clip </div>
+                            <div class="value" id="clip-value"> 50.0 <!-- Standart --> </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="knob-container" id="chomaEinstellungen" style="display: none;">
+                    <div class="input-knob-with-lable">
+                        <input type="range" class="input-knob" id="hue" min="0" max="360" step="1" value="0" 
+                        data-bgcolor="#444" data-fgcolor="#DDD" data-diameter="36" data-continuous="true"/>
+                        <div>
+                            <div class="lable">Hue </div>
+                            <div class="value" id="hue-value"> 0° <!-- Standart --> </div>
+                        </div>
+                        
+                        <label id="Farbvorschau"> 
+                            <input type="color" id="color_picker" value="#ff0000">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="knob-container">
+                    <div class="input-knob-with-lable">
+                        <input type="range" class="input-knob" id="density" min="0" max="100" step="0.5" value="100" 
+                        data-bgcolor="#444" data-fgcolor="#DDD" data-diameter="36" data-reset="100"/>
+                        <div>
+                            <div class="lable">Density </div>
+                            <div class="value" id="density-value"> 100.0 <!-- Standart --> </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div style="display: flex; width: 100%; justify-content: space-between; flex-wrap: wrap; margin-top: 6mm; margin-bottom: 6mm;">
+
+                <div style="width: 50%; min-width: max-content;"> 
+                    <div style="display: flex; align-items: center; margin-right: 6mm;">
+                        <label for="preMultiplied" class="lable">Premultiplied</label>
+                        <input type="checkbox" id="preMultiplied" class="toggle-switch" checked = false>
+                    </div>
+                </div>
+                <div style="width: 50%; min-width: max-content;"> 
+                    <div style="display: flex; align-items: center;">
+                        <label for="Inverse" class="lable">Inverse</label>
+                        <input type="checkbox" id="Inverse" class="toggle-switch" checked = false>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+
+            <!-- erstmal vernachlässigen - der Plan ist erstmal allen andere schick zu machen, 
+            dann das und dann endlich alle funktionen einfügen, so wie ich denke wie das ist aber am besten so,
+            dass ich das auch noch so ändern könnte wie das im Seminarheft steht -->
+
+           
+        
+        <div style="font-size: 10pt; line-height: 2rem; color: #777">
+
+            Auflösung <select name="size-norm-Auswahl" id="size-norm-Auswahl" class="basic-dropdown" onchange="changeNormCanvRes(this)">
+                <option value="Klein"> Klein </option>
+                <option value="Mittel" selected> Mittel </option>
+                <option value="HD"> HD </option> 
+                <option value="UHD">UHD</option>
+            </select>
+
+            <br>
+
+            Vollbild Auflösung <select name="size-norm-Auswahl" id="size-norm-Auswahl" class="basic-dropdown" onchange="changeFullscreenCanvRes(this)">
+                <option value="Klein"> Klein </option>
+                <option value="Mittel"> Mittel </option>
+                <option value="HD" selected> HD </option> 
+                <option value="UHD">UHD</option>
+            </select>
+
+            <br>
+
+            Beschriftungen <input type="checkbox" class="basic-checkbox" onclick="beschriftungen(this)">
+
+            <br>
+            <br>
+
+            <img src="img/cl.png" width="32px" style="filter: drop-shadow(0 0 0.1cm var(--drop-shadow));"> <br>
+            <p style="opacity: 0.3; user-select: none;">
+                © Sebastian Rohde 2025
+            </p>
+        </div>
+
+
+
+        <!-- Bugfix für Edge -->
+        <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 1); display: none; z-index: 9999;">
+        </div>
+
+
+
+
+        <canvas id="canvas" style="display: none;"></canvas>
+
+        <script type="text/javascript" src="canvas-button.js"></script>
+        <script type="module" src="title-effekt.js"></script>
+        <script type="text/javascript" src="generate_key.js"></script>
+        <script type="text/javascript" src="canvas_setup.js"></script>
+        <script type="text/javascript" src="hsl_und_rgb.js"></script>
+        <script type="text/javascript" src="effekte.js"></script>
+        <script type="text/javascript" src="testbilder.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="input-knobs.js"></script>
+        <script type="text/javascript" src="input-verarbeitung.js"></script>   
+        <script type="text/javascript" src="DynamicSelect.js"></script>
+        <script type="text/javascript" src="DynamicSelect_Implementation.js"></script>
+    </body>
+</html>
